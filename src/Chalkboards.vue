@@ -1,21 +1,36 @@
 <template>
-<div>
-<h1 class="title-center">Walking Up the Sidewalk</h1>
-<button v-on:click="newContents" class="btn btn-default">Next</button>
-<h2>{{contents.restaurantName}} {{contents.restaurantSubName}}</h2>
-<p>
-Today's Special: {{ contents.modifier }} {{contents.adjective}} {{contents.noun}}
-</p>
-<p>
-  Only {{ contents.price}}!!
-</p>
-<p>
-  From {{contents.startTime}} to {{contents.endTime}}
-</p>
-<p>
-  {{contents.absurdPhrase}}
-</p>
-</div>
+  <div id="main">
+    <div class="row">
+      <div class="text-center">
+        <button v-on:click="newContents" class="btn btn-default btn-lg next-button" >Next</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="chalk-wrapper">
+        <div class="chalk-title">
+          <h2>{{contents.restaurantName}} {{contents.restaurantSubName}}</h2>
+        </div>
+        <div class=chalk-body>
+          <p>
+            Today's Special:
+          </p>
+          <p class="food-modifier">
+            {{ contents.modifier }}
+          </p>
+          <p>
+            {{contents.adjective}} {{contents.noun}}
+          </p>
+          <p>
+            Only {{ contents.price}}!!
+          </p>
+          <p>
+            From {{contents.startTime}} to {{contents.endTime}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <h1 class="title">Walking Up the Sidewalk...</h1>
+  </div>
 
 </template>
 <script>
@@ -79,10 +94,14 @@ function fetchData() {
 
 <style>
 body {
-    background-image: url("../static/sign2.jpg");
-    background-size: 100%;
+    background-image: url("../static/sign.jpg");
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1f1f2e;
 }
 html, body {
+  font-family: 'Fredericka the Great', cursive;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -96,7 +115,58 @@ img {
   max-width: 100%;
 }
 
-.title-center {
-  text-align: center
+.title {
+  text-align: center;
+  font-size: 4vw;
+  position:fixed;
+  left:0px;
+  bottom:75px;
+  height:30px;
+  width:100%;
 }
+
+.chalk-wrapper {
+  display: inline-block;
+  max-width: 33%;
+  padding-left: 1.5vw;
+}
+
+.chalk-wrapper .chalk-title {
+  text-align: center;
+  width:100%;
+  height:0;
+	font-size: 2.5vw;
+  line-height: 0;
+	color:white;
+  position:absolute;
+  top:20%;
+}
+
+.chalk-wrapper .chalk-body {
+  text-align: center;
+  width:100%;
+  height:0;
+	font-size: 1.3vw;
+  line-height: 0;
+	color:white;
+  position:absolute;
+  top:30%;
+}
+
+.chalk-body p {
+  margin-bottom: 75px;
+}
+
+.food-modifier {
+  margin-bottom: 30px !important;
+}
+
+.next-button {
+  min-width: 250px;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+
+
 </style>

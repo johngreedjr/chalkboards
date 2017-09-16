@@ -2,7 +2,7 @@
   <div id="main">
     <div class="row">
       <div class="text-center">
-        <button v-on:click="newContents" class="btn btn-default btn-lg next-button" >Next</button>
+        <button v-on:click="newContents" class="btn btn-default btn-lg next-button" >Eh.. Fuck this place. Next.</button>
       </div>
     </div>
     <div class="row">
@@ -75,18 +75,20 @@ function randomize(word) {
   return word[Math.floor(Math.random() * word.length)]
 }
 
+import Words from './words'
+
 //refactor into a giant file obviously
 function fetchData() {
   return {
-    noun: ['Steak', 'Vodka', 'Gin', 'Chicken', 'Lamb'],
-    adjective: ['Roasted', 'Cheesy', 'Purple', 'Juicy', 'Fresh Hopped', 'Dry Hopped'],
-    modifier: ['Farm-to-Table', 'Fresh', 'Artisinally Crafted', 'Handmade', 'Handcrafted', 'Localy'],
-    price: ['$39.89', '49.56', '$10.99', '$90'],
-    startTime: ['6pm', '7pm', '5pm'],
-    endTime: ['6pm', '7pm', '5pm'],
-    absurdPhrase: ['Here you are family', 'Come on in the water is warm'],
-    restaurantName: ['Tasty', 'Raving', 'Midnight', 'Jumping', 'Raging', 'Z'],
-    restaurantSubName: ['Jacks', 'Moes', 'Mickels', 'Fever', 'One', 'Hex', 'Sopa']
+    noun: Words.noun,
+    adjective: Words.adjective,
+    modifier: Words.modifier,
+    price: Words.price,
+    startTime: Words.startTime,
+    endTime: Words.endTime,
+    absurdPhrase: Words.absurdPhrase,
+    restaurantName: Words.restaurantName,
+    restaurantSubName: Words.restaurantSubName
   };
 }
 
